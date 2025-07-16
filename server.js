@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 const socketIO = require('socket.io');
 const path = require('path');
 
+
 // 2. Import routes and socket logic
 const questionRoutes = require('./routes/questions');
 const aiJudgeRoutes = require('./routes/aiJudge');
@@ -21,6 +22,9 @@ const io = socketIO(server, {
     origin: '*', // Allow frontend
     methods: ['GET', 'POST']
   }
+});
+app.get("/", (req, res) => {
+  res.send(" Dev Combat Backend is Running!");
 });
 
 // 4. Middleware
